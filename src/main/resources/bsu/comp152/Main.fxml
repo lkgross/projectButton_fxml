@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bsu.comp152.Controller">
+   <center>
+      <Button fx:id="button_message" alignment="CENTER" mnemonicParsing="false" onAction="#pressButton" text="Click Me" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <Label fx:id="intro_message" text="Want to see a message?" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
