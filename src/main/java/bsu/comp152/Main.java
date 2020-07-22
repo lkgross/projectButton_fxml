@@ -31,15 +31,17 @@ import java.io.IOException;
  * the appropriate part of the project structure.
  *
  * To do so, first right click on resources in the project directory.
- * Add a new directory called bsu.
+ * Add a new -> directory called bsu.
  * Right click on the new directory bsu (resources/bsu).
- * Add a new directory called comp152.
+ * Add a new -> directory called comp152.
  * Right click on the new directory comp152 (resources/bsu/comp152).
  * Add a new -> FXML file.
  * Name it anything you like, such as Main.
  * Now you've created Main.fxml.
  * It is in the right place because the path
- * main/resources/bsu/comp152 mirrors main/java/bsu/comp152
+ * main/resources/bsu/comp152 for the FXML resource
+ * mirrors the path main/java/bsu/comp152
+ * for the Java classes
  * as IDEA expects/requires.
  *
  */
@@ -53,11 +55,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Parent is the superclass of Stage.
-        // We initialize a Parent object called root to null:
+        /* We start by declaring and initializing a root node
+         * for a Scene graph.
+         */
         Parent root = null;
+         /*
+         * Think of it as an object to
+         * hold all the different parts of a Scene.
+         * Parent is the superclass of all the components in a Scene.
+         * It is the superclass of all the nodes in a Scene graph.
+         */
 
-        // We want to load the FXML file from location loc.
+        // Next we want to load the FXML file from location loc.
 
         /* We connect the location loc to the file Main.fxml
          * using a "factory constructor" rather than the
@@ -134,7 +143,8 @@ public class Main extends Application {
     */
 
     /* However, a catch is for the .fxml file to be able to direct the view
-     * to the controller.
+     * to the controller. (Java has to be able to find the controller when
+     * the user clicks the button.)
      *
      * Look at the text file for Main.fxml. Enter
      * fx:controller="bsu.comp152.Main">
@@ -168,10 +178,13 @@ public class Main extends Application {
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="bsu.comp152.Controller">
       *
       * See the file Controller.java for the needed contents!
+      *
+      * Using a separate file Controller.java as the controller is preferred
+      * because we'd like to reserve Main for opening windows if multiple
+      * windows will potentially be opened in this program.
       */
 
      /*
-      *
       * Note we are using the the view/contoller organization in the
       * MVC architcture pattern: model-view-contoller.
       * The view shows you a display.
